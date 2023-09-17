@@ -1,0 +1,53 @@
+//rock paper scissor game
+
+var getUserChoice = function(userInput){
+userInput = userInput.toLowerCase();
+
+if (userInput === 'rock' || userInput ==='paper' || userInput ==='scissors'){
+return userInput; 
+}
+return 'Please check your spelling and reinput your choice'
+}
+
+console.log('Users Choice is',getUserChoice('paper'));
+
+var getComputerChoice = function(){
+const rnum = Math.floor(Math.random() * 3);
+if (rnum === 0)
+return 'rock';
+if (rnum === 1)
+return 'paper';
+if (rnum === 2)
+return 'scissors'
+}
+
+console.log('Computers Choice is',getComputerChoice())
+
+var determineWinner = function(userChoice,computerChoice){
+    if (userChoice === computerChoice)  {
+   return 'Game was a tie';
+    } 
+    if (userChoice === 'rock' && computerChoice === 'paper'){
+        return "Computer Won!";
+    } else {
+    if(userChoice === 'paper' && computerChoice === 'scissors'){
+        return 'Computer won'}
+    } 
+    if(userChoice === 'scissors' && computerChoice === 'rock'){
+        return 'Computer won';
+    } else {
+        return 'User won!'
+    }
+    }
+
+    function playGame(userChoice,computerChoice){
+        this.determineWinner()
+    // let userChoice = (getUserChoice)
+    // let computerChoice = (getComputerChoice)
+    
+    console.log(userChoice)
+    console.log(computerChoice)
+    }
+console.log(determineWinner(getUserChoice,getComputerChoice))
+
+this.playGame()
